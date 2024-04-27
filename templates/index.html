@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APIs</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="{% static 'style.css'%}" type="text/css" />
+  </head>
+  <body>
+    <form method='POST'>{% csrf_token %}
+      <h1> DAILY MOTIVATION TO START YOUR DAY</h1>
+      <input type='text' name='photo' placeholder='Enter a name' />
+      <button type='submit'> ENTER</button>
+    </form>  
+    <img src='https://source.unsplash.com/1600x900/?{{photo}}' alt='image' />
+    <h1>Hello There!</h1>
+    <p>
+      Feeling like a deflated balloon lately? Here are some motivational quotes to help you get started.
+    </p>
+    <div class='container'>
+    <div class='random'>
+      <h4>DID YOU KNOW!</h4>
+      <P> {{ fact}} </P>
+    </div>
+
+    <div class='random'>
+      <h4>MOTIVATION</h4>
+      <P> {{ slip}} </P>
+    </div>
+
+    <div class='random'>
+      <h4>CUTE DOGS TO KEEP YOU DISTRUCTED</h4>
+      <img src='{{ dog }}' />'></img>
+    </div>
+    </div>  
+
+  </body>
+</html>
